@@ -24,9 +24,11 @@ class SingleMenuItemView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = MenuSerializer
     
 class BookingViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticated]
-    
+    permission_classes = [IsAuthenticated] 
     queryset = Booking.objects.all()
+    serializer_class = BookingSerializer 
+    def create(self, request, *args, **kwargs):
+        return super().create(request, *args, **kwargs)
 
 # Page views
 
@@ -57,9 +59,7 @@ def reservations(request:HttpRequest) -> HttpResponse:
 
 def get_bookings(request):
     date = request.GET.get('date')   
-    bookings = Booking.objects.filter(booking_date__date=date)   
-
-     
+    bookings = Booking.objects.filter(booking_date__date=date)    
     booking_data = []
     for booking in bookings:
         booking_data.append({
