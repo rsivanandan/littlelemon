@@ -1,2 +1,6 @@
 # littlelemon
-Little Lemon Restaurant App
+
+Little Lemon Capstone Project.
+
+username - django
+password - 12345678
