@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.utils import timezone
-from .models import Menu, Booking
+from ..models import Menu, Booking
 from datetime import datetime
 from rest_framework import status
 
