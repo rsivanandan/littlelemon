@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.utils import timezone
 from .models import Menu, Booking
 from datetime import datetime
+from rest_framework import status
 
 class MenuModelTest(TestCase):
     def setUp(self):
@@ -47,4 +48,5 @@ class BookingModelTest(TestCase):
     def test_reservation_slot(self):
         # Test the reservation_slot property of the booking
         # It should return the hour of the booking_date
-        self.assertEqual(self.booking.reservation_slot, 15)  # 3 PM is 15:00
+        self.assertEqual(self.booking.reservation_slot, 15)  
+
